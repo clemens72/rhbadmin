@@ -1,25 +1,56 @@
+'use client';
+
 import * as React from 'react';
 import { DataGrid, GridRowsProp, GridColDef } from '@mui/x-data-grid';
+import { Box, Paper } from '@mui/material';
+import AudioPlayer from '@/app/components/AudioPlayer';
 
 const rows: GridRowsProp = [
-  { id: 1, title: 'Pendulum', link: 'https://drive.google.com/file/d/1ue8G9vyrYuw1zQjNczJnnx8BSvWdfoLk/view?usp=drive_link', comments: 'finished' },
-  { id: 2, title: 'New Leaf', link: 'https://drive.google.com/file/d/1afLKNIHardPtviDyZwBtOGbZjHMHp1TW/view?usp=drive_link', comments: 'live from rehearsal' },
-  { id: 3, title: 'Cruise', link: 'https://drive.google.com/file/d/1gE-PWj9VGWrcjyOzV8BjCZg5xltcHJc0/view?usp=drive_link', comments: 'finished, .wav' },
-  { id: 4, title: 'Holes', link: 'https://drive.google.com/file/d/1voB67_gacFC-rl_liOFznAAMC4cw5EFy/view?usp=drive_link', comments: 'home demo' },
+  { id: 1, title: 'Woof!', link: 'https://static1.squarespace.com/static/5aceb3075ffd20be26cc1d42/t/6606c6659073d93ac8573a45/1711720047223/01+Woof%21.mp3/original/01+Woof%21.mp3', comments: 'finished' },
+  { id: 2, title: 'Blue Sky', link: 'https://static1.squarespace.com/static/5aceb3075ffd20be26cc1d42/t/63adee8aea860264bad9ca3f/1672343184794/Blue+Sky+audio.mp3/original/Blue+Sky+audio.mp3', comments: 'live in studio' },
 ];
 
-const columns: GridColDef[] = [
-  { field: 'title', headerName: 'Song', width: 150 },
-  { field: 'link', headerName: 'File', width: 150 },
-  { field: 'comments', headerName: 'Comments', width: 200 },
-];
+export default function SongsPage() {
+  const [selectedSong, setSelectedSong] = React.useState(rows[0]);
 
-export default async function SongsPage() {
-  
+  const columns: GridColDef[] = [
+    { field: 'title', headerName: 'Song', width: 150 },
+    { field: 'link', headerName: 'File', width: 150 },
+    { field: 'comments', headerName: 'Comments', width: 200 },
+  ];
 
   return (
-    <div style={{ height: '100%', width: '100%' }}>
-      <DataGrid rows={rows} columns={columns} />
-    </div>
+    <Box sx={{ height: '100%', width: '100%', display: 'flex', flexDirection: 'column', gap: 3, p: 2 }}>
+      <Paper elevation={2} sx={{ p: 2 }}>
+        <AudioPlayer 
+          url={selectedSong.link}
+          title={selectedSong.title}
+        />
+      </Paper>
+      
+      <DataGrid 
+        rows={rows} 
+        columns={columns}
+        sx={{ 
+          flexGrow: 1,
+          '& .MuiDataGrid-row': {
+            cursor: 'pointer',
+            '&:hover': {
+              backgroundColor: 'action.hover',
+            },
+            '&.Mui-selected': {
+              backgroundColor: 'primary.light',
+            }
+          }
+        }}
+        onRowClick={(params) => setSelectedSong(params.row)}
+        initialState={{
+          pagination: {
+            paginationModel: { pageSize: 5 },
+          },
+        }}
+        pageSizeOptions={[5, 10]}
+      />
+    </Box>
   );
 }
