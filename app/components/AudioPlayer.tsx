@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import { Box, IconButton, Slider, Typography, Stack, Paper } from '@mui/material';
+import Divider from '@mui/material/Divider';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import PauseIcon from '@mui/icons-material/Pause';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
@@ -12,9 +13,10 @@ import VolumeDownIcon from '@mui/icons-material/VolumeDown';
 interface AudioPlayerProps {
   url: string;
   title: string;
+  comments: string;
 }
 
-export default function AudioPlayer({ url, title }: AudioPlayerProps) {
+export default function AudioPlayer({ url, title, comments }: AudioPlayerProps) {
   const [isPlaying, setIsPlaying] = React.useState(false);
   const [currentTime, setCurrentTime] = React.useState(0);
   const [duration, setDuration] = React.useState(0);
@@ -111,9 +113,13 @@ export default function AudioPlayer({ url, title }: AudioPlayerProps) {
         onEnded={() => setIsPlaying(false)}
       />
       
-      <Typography variant="h6" gutterBottom sx={{ mb: 2 }}>
+      <Typography variant="h4" gutterBottom sx={{ mb: 2 }}>
         {title}
       </Typography>
+      <Divider />
+      <p>
+        {comments}
+      </p>
 
       <Stack spacing={2}>
         {/* Playback Progress */}
@@ -181,27 +187,6 @@ export default function AudioPlayer({ url, title }: AudioPlayerProps) {
           />
         </Box>
       </Stack>
-
-      {/* Progress Bar 
-      <Box
-        sx={{
-          mt: 2,
-          width: '100%',
-          height: 4,
-          bgcolor: 'grey.200',
-          borderRadius: 2,
-          overflow: 'hidden'
-        }}
-      >
-        <Box
-          sx={{
-            width: `${progress}%`,
-            height: '100%',
-            bgcolor: 'primary.main',
-            transition: 'width 0.1s linear'
-          }}
-        />
-      </Box>*/}
     </Paper>
   );
 }
