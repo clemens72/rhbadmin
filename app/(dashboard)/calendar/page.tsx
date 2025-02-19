@@ -14,9 +14,9 @@ import ViewDayIcon from '@mui/icons-material/ViewDay';
 
 // Sample events data
 const events = [
-  { date: '2024-03-25', title: 'Band Practice' },
-  { date: '2024-03-28', title: 'Live Show' },
-  { date: '2024-04-01', title: 'Recording Session' },
+  { date: '2025-02-25', title: 'Band Practice' },
+  { date: '2025-02-28', title: 'Live Show' },
+  { date: '2025-02-01', title: 'Recording Session' },
 ];
 
 interface TabPanelProps {
