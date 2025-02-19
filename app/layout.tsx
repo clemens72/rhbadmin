@@ -3,8 +3,6 @@ import { NextAppProvider } from '@toolpad/core/nextjs';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import HomeIcon from '@mui/icons-material/Home';
-import StarsIcon from '@mui/icons-material/Stars';
-import SpatialAudioIcon from '@mui/icons-material/SpatialAudio';
 import MusicNoteIcon from '@mui/icons-material/MusicNote';
 import ClientLocalizationProvider from './components/ClientLocalizationProvider';
 
@@ -27,16 +25,6 @@ const NAVIGATION: Navigation = [
     segment: 'calendar',
     title: 'Calendar',
     icon: <CalendarTodayIcon />,
-  },
-  {
-    segment: 'performances',
-    title: 'Performances',
-    icon: <StarsIcon />,
-  },
-  {
-    segment: 'rehearsals',
-    title: 'Rehearsals',
-    icon: <SpatialAudioIcon />,
   },
   {
     segment: 'songs',

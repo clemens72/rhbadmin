@@ -7,7 +7,7 @@ export default async function HomePage() {
 
   return (    
       <Typography>
-        Welcome to Toolpad, {session?.user?.name || 'User'}!
+        Woof, {session?.user?.name || 'User'}!
       </Typography>
   );
 }
