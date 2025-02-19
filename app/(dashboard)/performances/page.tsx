@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { DataGrid, GridRowsProp, GridColDef } from '@mui/x-data-grid';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 const rows: GridRowsProp = [
   { id: 1, title: 'Pendulum', link: 'https://drive.google.com/file/d/1ue8G9vyrYuw1zQjNczJnnx8BSvWdfoLk/view?usp=drive_link', comments: 'finished' },
@@ -18,6 +19,7 @@ export default async function PerformancesPage() {
 
   return (
       <div style={{ height: '100%', width: '100%' }}>
+        <DatePicker />
         <DataGrid rows={rows} columns={columns} />
       </div>
   );

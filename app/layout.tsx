@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { NextAppProvider } from '@toolpad/core/nextjs';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
-import HomeIcon from '@mui/icons-material/Home';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
+import HomeIcon from '@mui/icons-material/Home';
 import StarsIcon from '@mui/icons-material/Stars';
 import SpatialAudioIcon from '@mui/icons-material/SpatialAudio';
 import MusicNoteIcon from '@mui/icons-material/MusicNote';
@@ -47,7 +47,7 @@ const NAVIGATION: Navigation = [
 
 const BRANDING = {
   title: 'Red Healer Admin',
-  logo: <img src="http://static1.squarespace.com/static/5aceb3075ffd20be26cc1d42/t/626abcb21e7c6f59b9a538f4/1651162290617/Red_Healer_Logo1080x1080.jpg" alt="Red Healer Logo" />,
+  logo: <img src="https://drive.google.com/file/d/19YhzSJ4lGbFfDWFjOh4tGgEGY9J37Vpw/view?usp=drive_link" alt="Red Healer Logo" />,
 };
 
 
