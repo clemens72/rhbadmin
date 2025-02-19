@@ -47,7 +47,7 @@ const NAVIGATION: Navigation = [
 
 const BRANDING = {
   title: 'Red Healer Admin',
-  logo: <img src="https://drive.google.com/file/d/19YhzSJ4lGbFfDWFjOh4tGgEGY9J37Vpw/view?usp=drive_link" alt="Red Healer Logo" />,
+  logo: <img src="https://images.squarespace-cdn.com/content/5aceb3075ffd20be26cc1d42/4fe3dd7f-9197-4e16-88aa-c2d87cf10a08/logob180.png" alt="Red Healer Logo" />,
 };
 
 
