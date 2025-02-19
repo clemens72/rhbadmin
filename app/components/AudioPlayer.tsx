@@ -20,15 +20,16 @@ export default function AudioPlayer({ url, title, comments }: AudioPlayerProps) 
   const [isPlaying, setIsPlaying] = React.useState(false);
   const [currentTime, setCurrentTime] = React.useState(0);
   const [duration, setDuration] = React.useState(0);
-  const [volume, setVolume] = React.useState(1);
-  const [prevVolume, setPrevVolume] = React.useState(1);
+  //const [volume, setVolume] = React.useState(1);
+  //const [prevVolume, setPrevVolume] = React.useState(1);
   const audioRef = React.useRef<HTMLAudioElement>(null);
 
-  React.useEffect(() => {
-    if (audioRef.current) {
-      audioRef.current.volume = volume;
-    }
-  }, [volume]);
+  // // Volume control
+  // React.useEffect(() => {
+  //   if (audioRef.current) {
+  //     audioRef.current.volume = volume;
+  //   }
+  // }, [volume]);
 
   React.useEffect(() => {
     // Reset player state when URL changes
@@ -73,27 +74,27 @@ export default function AudioPlayer({ url, title, comments }: AudioPlayerProps) 
     }
   };
 
-  const handleVolumeSliderChange = (_event: Event, newValue: number | number[]) => {
-    if (typeof newValue === 'number') {
-      setVolume(newValue);
-    }
-  };
+  // const handleVolumeSliderChange = (_event: Event, newValue: number | number[]) => {
+  //   if (typeof newValue === 'number') {
+  //     setVolume(newValue);
+  //   }
+  // };
 
-  const toggleMute = () => {
-    if (volume > 0) {
-      setPrevVolume(volume);
-      setVolume(0);
-    } else {
-      setVolume(prevVolume);
-    }
-  };
+  // const toggleMute = () => {
+  //   if (volume > 0) {
+  //     setPrevVolume(volume);
+  //     setVolume(0);
+  //   } else {
+  //     setVolume(prevVolume);
+  //   }
+  // };
 
-  const getVolumeIcon = () => {
-    if (volume === 0) return <VolumeOffIcon />;
-    if (volume < 0.3) return <VolumeMuteIcon />;
-    if (volume < 0.7) return <VolumeDownIcon />;
-    return <VolumeUpIcon />;
-  };
+  // const getVolumeIcon = () => {
+  //   if (volume === 0) return <VolumeOffIcon />;
+  //   if (volume < 0.3) return <VolumeMuteIcon />;
+  //   if (volume < 0.7) return <VolumeDownIcon />;
+  //   return <VolumeUpIcon />;
+  // };
 
   const formatTime = (time: number) => {
     const minutes = Math.floor(time / 60);
@@ -113,7 +114,7 @@ export default function AudioPlayer({ url, title, comments }: AudioPlayerProps) 
         onEnded={() => setIsPlaying(false)}
       />
       
-      <Typography variant="h4" gutterBottom sx={{ mb: 2 }}>
+      <Typography variant="h5" gutterBottom sx={{ mb: 2 }}>
         {title}
       </Typography>
       <Divider />
@@ -164,7 +165,7 @@ export default function AudioPlayer({ url, title, comments }: AudioPlayerProps) 
           </Box>
         </Box>
 
-        {/* Volume Control */}
+        {/* Volume Control
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
           <IconButton onClick={toggleMute} size="small">
             {getVolumeIcon()}
@@ -185,7 +186,7 @@ export default function AudioPlayer({ url, title, comments }: AudioPlayerProps) 
               }
             }}
           />
-        </Box>
+        </Box> */}
       </Stack>
     </Paper>
   );

@@ -66,8 +66,8 @@ export default function SongsPage() {
   const [selectedSong, setSelectedSong] = React.useState(rows[0]);
 
   const columns: GridColDef[] = [
-    { field: 'title', headerName: 'Song', width: 150 },
-    { field: 'date', headerName: 'Date', width: 150 },
+    { field: 'title', headerName: 'Song', width: 125 },
+    { field: 'date', headerName: 'Date', width: 100 },
     { field: 'comments', headerName: 'Comments', width: 200 },
   ];
 
@@ -99,10 +99,10 @@ export default function SongsPage() {
         onRowClick={(params) => setSelectedSong(params.row)}
         initialState={{
           pagination: {
-            paginationModel: { pageSize: 6 },
+            paginationModel: { pageSize: 5 },
           },
         }}
-        pageSizeOptions={[6, 11]}
+        pageSizeOptions={[5, 10]}
       />
     </Box>
   );
