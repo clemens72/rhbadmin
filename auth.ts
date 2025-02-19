@@ -61,7 +61,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         return true;
       }
 
-      return false; // Redirect unauthenticated users to login page
+      return true; // Redirect unauthenticated users to login page
     },
   },
 });

@@ -99,10 +99,10 @@ export default function SongsPage() {
         onRowClick={(params) => setSelectedSong(params.row)}
         initialState={{
           pagination: {
-            paginationModel: { pageSize: 5 },
+            paginationModel: { pageSize: 11 },
           },
         }}
-        pageSizeOptions={[5, 10]}
+        pageSizeOptions={[11]}
       />
     </Box>
   );

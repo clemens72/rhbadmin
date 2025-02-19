@@ -118,9 +118,9 @@ export default function AudioPlayer({ url, title, comments }: AudioPlayerProps) 
         {title}
       </Typography>
       <Divider />
-      <p>
+      <Typography variant="body1" gutterBottom sx={{ mb: 2 }}>
         {comments}
-      </p>
+      </Typography>
 
       <Stack spacing={2}>
         {/* Playback Progress */}
