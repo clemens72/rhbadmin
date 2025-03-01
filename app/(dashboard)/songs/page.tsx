@@ -9,7 +9,7 @@ const rows: GridRowsProp = [
   { id: 1, title: 'White Whiskers',
     date: '2-26-2025',
     link: 'https://static1.squarespace.com/static/5aceb3075ffd20be26cc1d42/t/67c1ce54cf0d4f4af2e3ed4d/1740754520124/White+Whiskers+short.mp3/original/White+Whiskers+short.mp3',
-    comments: 'canine wisdom' },
+    comments: 'recognizing canine wisdom' },
 
   { id: 2, title: 'Holes',
     date: '12-13-2024',
